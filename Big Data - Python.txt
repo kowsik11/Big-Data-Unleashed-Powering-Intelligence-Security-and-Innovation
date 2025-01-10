@@ -1,0 +1,391 @@
+What is Big Data?
+Answer:
+Big Data refers to extremely large datasets that may be structured, semi-structured, or unstructured, which are too complex to be processed by traditional data-processing software. The 3Vs of Big Data are Volume, Velocity, and Variety.
+
+
+Key Tools and Technologies:
+
+Hadoop:
+Framework for storing and processing large datasets.
+Components:
+   HDFS (Hadoop Distributed File System): Stores data.
+   MapReduce: Processes data in parallel.
+
+Spark:
+Faster alternative to Hadoop for Big Data processing.
+In-memory computing makes it efficient for real-time analytics.  << ----
+
+Hive: A data warehouse tool for querying Big Data using SQL-like language.
+Kafka: Real-time data streaming platform for collecting and distributing data.  << ----
+NoSQL Databases: Tools like Cassandra and MongoDB for storing unstructured data.
+
+
+Big Data Workflow ?!
+
+Data Collection: Collect data from various sources (e.g., social media, IoT sensors, logs).
+Data Storage: Store data in HDFS, NoSQL databases, or cloud storage.
+Data Processing:
+    Use tools like Spark for transformations.
+    Apply machine learning algorithms.
+Data Analysis: Gain insights using Hive or Python-based tools.
+Visualization: Tools like Tableau or Power BI for dashboards.
+
+
+
+What are the main challenges of Big Data?
+
+Answer:
+Some of the main challenges include:
+Storage: Storing vast amounts of data efficiently.
+Data Privacy and Security: Ensuring that sensitive data is protected.
+Data Integration: Combining data from various sources in a cohesive manner.
+Data Quality: Ensuring data accuracy, consistency, and relevance.  << ----
+Scalability: Managing large volumes of data effectively.
+
+
+why are you using this HADOOP ?!  << ----
+
+Its free open source and It will align with Linux and it works with parallel.  - 
+default storage space - 128MB
+
+Hadoop = hdfs - file distribution (storing, writing, reading) + MapReduce(used for analysis and processing)
+
+command: start with
+
+Hadoop fs - <command>
+
+now a ways we are having a large amount of data where it cant be able to store in single system or a server.. so we use distributed systems such that we are using Hadoop which is implement by Apache…
+Stores data in different systems or nodes and it replicating the copy - its like data shading
+And it uses MapReduce to do processing and analytics on data
+
+
+how data is stored in Hadoop ?!
+name node -> secondary  node (tells it needs some ip's to store the data.. because data arrives to name node with a block of data) and it gives and now
+name node -> data node (gives ip address to check the status of the servers to datanodes) -> and it goes to one of the datanode and it asks the neighbours based on the ips and once it finishes the process... at last, again datanode will give ACK to the name node... that all the servers or nodes are ready to store the data.
+
+
+data -> splitting (different nodes) -> mapping -> shuffling -> reducing -> final result.   << ----
+
+start-dfs.sh    -> distributed file system
+start-yarn.sh  - > mapreduce
+
+yarn working model:
+(resource manager - divide the jobs, node manager- tells which node to active, application node, container)  << ----
+
+
+HDFS - Hadoop distributed file system
+Its a fault tolerance, high bandwidth, and have high throughput.
+
+Hadoop - is a open source framework which is used store, process, and analyse data
+while HDFS is a file system of Hadoop 
+
+
+
+Explain Hadoop and its components.
+
+Answer:
+Hadoop is an open-source framework for storing and processing large datasets. Its key components are:
+HDFS (Hadoop Distributed File System): A distributed file system to store large datasets. - also contains datanode and name node
+MapReduce: A programming model for processing large datasets in parallel.
+YARN (Yet Another Resource Negotiator): Manages resources in a Hadoop cluster.
+Hive: A data warehouse system built on top of Hadoop for querying and managing large datasets.
+
+
+What is the difference between Hadoop and Spark?  << ----
+Answer:
+
+Hadoop is a distributed storage and processing large datasets, mainly relying on MapReduce.
+Spark is a faster, in-memory processing engine that can run on top of Hadoop and process data much faster by STORING INTERMEDIATE data in MEMORY rather than writing it to disk. It supports both batch and stream processing.
+
+
+What is a NoSQL database?
+Answer:
+NoSQL databases are non-relational databases that are used to handle large volumes of unstructured or semi-structured data. Popular NoSQL databases include:
+MongoDB: Document-oriented database.
+Redis: Key-value store.
+
+
+What is the role of YARN in Hadoop?
+Answer:
+YARN (Yet Another Resource Negotiator) is the resource management layer of Hadoop. It manages the distribution of resources across the cluster, schedules jobs, and monitors the progress of tasks.
+
+
+What is HDFS, and how does it work?
+Answer:
+HDFS (Hadoop Distributed File System) is designed to store vast amounts of data across multiple machines in a cluster. It splits large files into smaller chunks and stores them across different machines. It is HIGH THORUGHTPUT AND FAULT TOLERANCE, with each chunk being replicated across multiple nodes.
+
+data -> splitting (different nodes) -> mapping -> shuffling -> reducing -> final result. 
+
+Master-Slave Architecture: HDFS has a master-slave architecture with two main components:
+NameNode (master): Manages the metadata and the structure of the file system.  << ----
+DataNode (slaves): Stores the actual data blocks.
+
+
+
+What are the benefits of Big Data?
+
+Answer:
+Some key benefits include:
+Improved Decision-Making: Using insights from Big Data to make informed decisions.
+Enhanced Customer Experience: Personalized recommendations and improved service.
+Cost Efficiency: Optimization of operations, processes, and resource management.
+Innovation: Identifying new market opportunities and trends.
+
+
+How does Big Data impact businesses?
+Answer:
+Big Data enables businesses to understand customer behaviour, improve operations and enhance the products.   << ----
+
+
+What are the types of Big Data Analytics?
+Answer:
+Descriptive Analytics: SUMMARIZING historical data to identify trends.
+Diagnostic Analytics: Analyzing past data to understand causes of certain outcomes.
+Predictive Analytics: Using statistical models and machine learning techniques to predict future outcomes.
+Prescriptive Analytics: RECOMMENDING actions based on data analysis.
+
+
+What is MapReduce?
+Answer:
+MapReduce is a programming model for processing large datasets in parallel. The "Map" step filters and sorts data, while the "Reduce" step performs a summary operation (like summing up or averaging the data).
+
+
+What is the difference between batch processing and stream processing?  << ----
+
+Answer:
+Batch Processing: Processes data in large chunks at scheduled intervals. It is suitable for scenarios like generating reports or processing historical data.
+Stream Processing: Processes data continuously as it arrives. It’s used in scenarios where data needs to be processed instantly, like financial transactions, social media feeds, and sensor data. It is ideal for real-time applications such as fraud detection or monitoring systems. Tools like APACHE KAFKA is used for real-time data processing.
+Ex: live streaming in YouTube.
+
+
+Apache Kafka?
+Answer:
+Apache Kafka is a distributed streaming platform that can handle high-throughput, low-latency data streams.
+
+ 
+Data lakes and Data warehouse:
+
+Data lakes store raw, unprocessed data; - Data lakes handle all kinds of data (structured, unstructured, semi-structured) -  Data lakes are for storing large amounts of diverse data.
+Data is stored first, processed later.
+Used for big data, analytics, and machine learning.
+Slower for querying (needs processing).
+Ex: AWS S3, Azure Data Lake, Hadoop
+
+data warehouses store organized, cleaned data. - only structured data. - data warehouses are for analysing specific, well-organized data for business insights. - uses for query and search operation efficiently   << ----
+Data is processed before storage.
+Used for business intelligence and reporting.
+Faster for querying (pre-processed data)
+Ex: Amazon Redshift, Snowflake, Google BigQuery
+
+
+What is Machine Learning in Big Data?       <<  ----
+Answer:
+Machine Learning (ML) is the use of algorithms to analyse large datasets, LEARN FROM PATTERNS, and make predictions. In Big Data, ML models can process and make sense of complex data to identify trends, predict outcomes, and optimize processes.
+
+
+How do you ensure the security of Big Data?
+Answer:
+Security in Big Data is ensured through techniques like data encryption, access control, secure data storage, and auditing. Platforms like Kerberos is used for managing security policies and ensuring safe data access.
+
+Kerberos:
+It provides network authentication protocol. its a 3rd party trusted server. Its a client-server architecture. It uses symmetric key. It requires 3rd party for key (KDC - Key distribution center). Once authenticated then only services or resources will be provided.
+3 components:
+Authentication server, database, ticket granting server (TGS).  KDC(contains AS and TGS)
+Every KDC will have two servers - AS and TGS.
+
+Initiallyy.. user will ask for KEYS to KDC.. then it will give the TICKET from the AS which is encrypted.. and now use will decrypt by using his private key and then he found the HASH after decrption.. now again he will send the HASH to the KDC and then AS will verify it.. and next it will goes to TGS step.. then it provide SERVICE TICKET (secret key) from the TGS and at last by using this.. I will communicate with the server.
+
+
+
+
+What are the tools for Big Data Visualization?
+Answer:
+Big Data visualization tools help in presenting data insights through graphical formats. Popular tools include:
+
+Tableau: Widely used for creating interactive dashboards.
+Power BI: A Microsoft tool for analysing and visualizing data.  << ----
+
+
+A Data Frame is a two-dimensional, size-mutable with labelled axes (rows and columns). It is a fundamental object in the Pandas library. It allows you to store and manipulate data in a structured form, making it easier to work with large datasets.
+Mainly used for tabular data.- CSV data
+
+
+
+Ex: Project ideas.
+
+1. Sentiment Analysis on Twitter Data
+What to say:
+Collected live tweets using Kafka.
+Stored data in HDFS.
+Analyzed sentiment using Spark's MLlib.
+Visualized trends using Tableau.
+
+
+2. E-commerce Product Recommendation
+What to say:
+Built a recommendation system for an e-commerce platform.
+Used Spark to analyze clickstream data.
+Stored large datasets in HDFS and queried using Hive.
+
+
+
+Project: YOUTUBE: EXPLANATION:-
+
+Sentiment Analysis on Twitter Data using Machine Learning with Python:
+
+It will process the data and tell whether its a positive tweet or negative tweet.
+Workflow:  << ----
+Tweet data -> Kafka Data (source) -> Spark (processing) -> train and test -> kafka (to reach target) -> Create logistic model. 
+New data test with this model.
+
+Excel content (columns):
+
+Target: (0 - negative, 2 - neutral, 4 - positive)
+Ids
+data: Contains date and time of the tweet.
+flag: if query is empty.. it shows NO_QUERY
+user
+text
+
+
+FOR DOWNLOADING THE DATASET.. WE CAN USE API IN KAGGLE. << ----
+
+For extracting the data file (.csv) from zip file:
+Code:
+
+# extracting the compressed dataset
+
+from zipfile import ZipFile
+dataset = '/content/sentiment140.zip'   << --- This we get from api.
+
+with ZipFile(dataset, 'r') as zip:
+    zip.extractall()
+    print('The dataset is extracted')
+
+
+ 
+What is Zookeeper in Kafka?  << ----
+Zookeeper is a centralized service for maintaining configuration information, naming, and synchronization. In Kafka, Zookeeper manages the Kafka cluster.
+
+How it manages OR Role of Zookeeper in Kafka ?!
+Answer:
+
+Leader Election – Zookeeper elects a leader for each partition to ensure only one broker is in charge of handling writes and reads.
+Metadata Management – It keeps track of brokers, topics, partitions, and their states (active/inactive).
+Broker Coordination – It detects when a broker joins or leaves the cluster and notifies Kafka to reassign partitions if needed.
+Configuration Management: Stores and updates configurations for brokers and topics.
+Cluster Management: Tracks the availability of Kafka brokers using heartbeats. Maintains the list of active brokers.
+Distributed Configuration – It stores and synchronizes Kafka configurations across all brokers for consistency.
+
+
+Limitations of ZooKeeper
+Single Point of Failure: If ZooKeeper fails, Kafka operations like leader election are affected. 
+High Latency: Frequent communication between Kafka and ZooKeeper can introduce delays.
+Complex Maintenance: Requires separate setup and monitoring.
+
+Transition to KRaft
+To overcome ZooKeeper's limitations, Kafka is introducing KRaft, where KRaft itself manages metadata and coordination tasks. This removes the need for ZooKeeper and simplifies deployment.  << ----
+
+
+
+How Apache kafka works ?!
+
+Apache Kafka is a free, open-source platform that helps companies handle large amounts of data in real-time. It’s especially useful for businesses that need to manage and move data efficiently.
+Kafka is excellent for handling high-throughput, real-time data streams.
+Used in log aggregation, monitoring systems, fraud detection, IoT applications, and real-time analytics.
+
+Stream Processing: Processes data continuously as it arrives. It’s used in scenarios where data needs to be processed instantly, like financial transactions, social media feeds, and sensor data. It is ideal for real-time applications such as fraud detection or monitoring systems. Tools like APACHE KAFKA is used for real-time data processing.
+
+Ex: 
+volley ball match live score
+Crex 
+Or we can also used in Car booking: UBER, OLA, Rapido etc - gps, prati point dhagara manaki kavali.. like how much he travelled once he accepted the request in uber.
+
+In a typical architecture:
+Kafka collects and streams data.
+Spark can process and analyze that data in real-time
+
+
+Limitations:
+
+Not a Database: Kafka is a streaming platform, not a database. While it can store data temporarily, it's not designed for long-term data storage or complex querying.
+Complex Setup and Maintenance: Setting up and managing Kafka clusters can be complex. You need to handle partitioning, replication, fault tolerance, and scaling.
+Lack of Advanced Querying: So we are using SPARK.
+
+Topics in Kafka:
+Producer: The source of data that publishes messages to the Kafka broker.
+Broker: An intermediary that stores and transmits messages between producers and consumers in the Pub-Sub model.
+Cluster: A group of Kafka brokers working together to handle large data volumes
+Topic: A categorization mechanism that stores different types of messages (e.g., payment, booking) for better message segregation.
+Consumer: Subscribes to a specific topic to receive messages without directly querying the broker.
+Partition: Kafka topics are divided into partitions to handle large data volumes, ensuring better performance and high availability.
+Zookeeper: Manages Kafka clusters, tracking the status of brokers, topics, partitions, and offsets.
+
+
+Data ingestion is the process of collecting and importing data from various sources into a single location for storage and analysis. It's the first step.
+
+
+Example Use Case in Big Data Analytics
+
+Problem: A company wants to analyse customer purchase behaviour in real-time.
+Solution:
+Kafka collects purchase transactions from e-commerce platforms.
+Spark Streaming processes the data in real-time.
+Results are stored in HDFS and visualized in dashboards.
+
+
+<< ----
+Data Engineering → Focuses on building and maintaining data infrastructure (pipelines, databases, storage).
+who uses it: Engineers who manage data systems.  Tools used: ELT, Hadoop, Kafka.
+
+Data Science → The field of extracting insights from data using statistics, AI, and ML. It focuses on future predictions and automation.
+who uses it: Businesses, researchers, analysts. Tools: Both.
+
+Data Scientists → Use data to create models, make predictions, and provide business insights.
+who uses it: Scientists who analyze and model data. Tools: Jupiter, TensorFlow, Python.
+
+--------------------------------------------------------------------------------------------------------------------------
+
+Data Science (Role and Purpose)
+Data Science involves extracting insights from data using advanced techniques like machine learning, predictive modeling, and deep learning. It focuses on future predictions and automation.
+
+Key Steps in Data Science:
+Problem Definition: Understand the business problem.
+Data Collection & Cleaning: Gather and preprocess data.
+Model Building: Create machine learning models.
+Deployment: Implement models for real-world use.
+Model Evaluation: Test and monitor model performance.
+
+🔹 Example:
+Predictive Analysis: Predicting which customers are likely to churn in the next quarter.
+Machine Learning: Building a recommendation system for an e-commerce platform.
+
+
+
+Data Analyst:
+
+A Data Analyst focuses on organizing, analyzing, and interpreting data to generate reports and insights for business decision-making. They typically deal with historical data and use it to inform past performance and guide future actions.
+
+Key Tasks of a Data Analyst:
+Data Cleaning: Remove or correct corrupted data.
+Reporting: Create dashboards and visual reports.
+Data Visualization: Present data in a meaningful way (charts, graphs, etc.).
+Trend Analysis: Identify patterns and trends in data.
+
+
+
+Sampling Techniques and Their Advantages
+Sampling is the process of selecting a subset of data from a larger population for analysis. It helps in making predictions or decisions about the whole population without analyzing every single data point.
+
+Advantages:
+Easy to Implement: No special procedure is required, making it simple and straightforward.
+Unbiased: Every individual in the population has an equal probability of selection, reducing bias.
+Statistical Properties: Ensures that the sample is representative, making the results more generalizable to the population.
+
+Sampling Techniques:
+
+Simple Random Sampling	Easy, unbiased, statistically sound
+Systematic Sampling	Simple, even distribution, saves time
+Cluster Sampling	Cost-effective, time-saving, practical
+Convenience Sampling	Quick, easy, low-cost, practical
+
